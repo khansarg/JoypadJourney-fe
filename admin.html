@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class= "logo">
+        <img src ="Journey 1.png" alt="Logo Website">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #BE9CC1;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: #FF99AA;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: white;
+            font-size: 2rem;
+            display: block;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 25px;
+            background: white;
+            outline: none;
+            font-size: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 25px;
+            background: #FF99AA;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-btn:hover {
+            background: #ff8599;
+        }
+
+        .register-text {
+            margin-top: 1rem;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .register-text a {
+            color: #FF99AA;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .register-text a:hover {
+            text-decoration: underline;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" class="back-btn">←</a>
+    <div class="login-container">
+        </div>
+        <form>
+            <div class="form-group">
+                <input type="text" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="login-btn">Log In</button>
+        </form>
+        <p class="register-text">
+            Doesn't have any account yet? <a href="#">Register</a>
+        </p>
+    </div>
+</body>
+</html>

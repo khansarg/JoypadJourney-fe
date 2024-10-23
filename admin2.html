@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 80px;
+            background: #fff;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .sidebar-item {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .sidebar-item.active {
+            background: #FFE6E6;
+            color: #FF99AA;
+        }
+
+        .sidebar-item i {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .add-button {
+            background: #FFE6E6;
+            color: #FF99AA;
+        }
+
+        .logout {
+            margin-top: auto;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: #BE9CC1;
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: -20px -20px 20px -20px;
+        }
+
+        .logo {
+            color: #FF99AA;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .search-bar {
+            flex-grow: 1;
+            max-width: 500px;
+            margin: 0 20px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+        }
+
+        .user-profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        /* Reservation Table Styles */
+        .reservation-section {
+            background: rgba(190, 156, 193, 0.2);
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .reservation-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .add-reservation-btn {
+            background: rgba(190, 156, 193, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .reservation-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .reservation-table th {
+            text-align: left;
+            padding: 15px;
+            color: #666;
+        }
+
+        .reservation-table td {
+            padding: 15px;
+            color: #444;
+        }
+
+        .status-success {
+            color: green;
+        }
+
+        .extends-btn {
+            background: rgba(190, 156, 193, 0.8);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-item add-button">
+                <i class="fas fa-plus"></i>
+            </div>
+            <div class="sidebar-item active">
+                <i class="fas fa-calendar-check"></i>
+                <span>Reservation</span>
+            </div>
+            <div class="sidebar-item">
+                <i class="fas fa-clock"></i>
+                <span>Availability</span>
+            </div>
+            <div class="sidebar-item logout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div class= "logo">
+                    <img src ="Journey 1.png" alt="Logo Website">
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="user-profile">
+                    <span>Admin</span>
+                    <img src="/api/placeholder/40/40" alt="Admin Profile">
+                </div>
+            </div>
+
+            <!-- Reservation Section -->
+            <div class="reservation-section">
+                <div class="reservation-header">
+                    <h2>Daftar Reservasi</h2>
+                    <button class="add-reservation-btn">
+                        <i class="fas fa-plus"></i>
+                        Tambah Reservasi
+                    </button>
+                </div>
+                <table class="reservation-table">
+                    <thead>
+                        <tr>
+                            <th>Reservation ID</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Room</th>
+                            <th>Payment</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>RNEYJINOV241</td>
+                            <td>01/11/2024</td>
+                            <td>10:00-11:00</td>
+                            <td>Regular Room</td>
+                            <td class="status-success">Success</td>
+                            <td><button class="extends-btn">Extends</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
