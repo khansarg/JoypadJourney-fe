@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #D0C1D5;
+}
+header {
+    background-color: #A98EB2;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+}
+header .logo img {
+    width: 150px; 
+    height: auto;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    text-shadow: 6px 6px 4px rgba(0, 0, 0, 0.1);
+}
+nav ul li {
+    margin-left: 20px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 8px 12px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+/*garis bawah*/
+
+nav ul li a:hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    background-color: white;
+    bottom: 0;
+    left:0;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+}
+nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+}
+nav ul li a:focus {
+    outline: none; /* Menghapus outline default */
+    border-bottom: 1px solid white; /* Menambahkan garis bawah saat fokus */
+}
+.header-buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+.button {
+    padding: 10px 20px;
+    border:none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3 ease;
+    outline: none;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+}
+.regis-button {
+    background-color: #D0C1D5;
+    color:white;
+}
+.regis-button:hover{
+    box-shadow: -3px -3px 6px rgba(0, 0, 0, 0.1);
+    transition: all 250ms linear;
+}
+.login-button {
+    background-color: white;
+    color: #A98EB2;
+}
+.login-button:hover{
+    box-shadow: -3px -3px 6px rgba(0, 0, 0, 0.1);
+    transition: all 250ms linear;
+}
+
+.welcome-vid {
+    padding-block: 250px;
+    max-width: 1261px;
+    margin-inline: auto;
+    border-radius: 45px;
+    
+}
+.welcome-vid .button-reserve {
+    margin-inline: auto;
+    width: max-content;
+    border-radius: 5rem;
+    margin-bottom: 0.8rem; /* Jarak ke video */
+    background-color: #E7E0EA;
+    display: flex;
+    gap: 1rem; /* Buat jarak nya */
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+.welcome-vid .button-reserve button {
+    background-color: transparent;
+    padding: 1rem 3rem;
+    box-shadow: none;
+    border-radius: 5rem;
+  }
+  .welcome-vid .button-reserve button.active {
+    background-color: white;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+  }
+  .welcome-vid .button-reserve .submit {
+    background-color: #A98EB2;
+    color: #FFF;
+    font-weight: semibold;
+    padding: 0.75rem 2rem;
+    margin-right: 0.25rem;
+  }
+  
+  .welcome-vid video {
+      width: 100%;
+      height: 100%;
+      margin-inline: auto;
+      border: none; 
+      border-radius: 45px;
+  
+  }
