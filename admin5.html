@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyoo Journey - Reservation Time</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 80px;
+            background: #fff;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .sidebar-item {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .sidebar-item.active {
+            background: #FFE6E6;
+            color: #FF99AA;
+        }
+
+        .add-button {
+            background: #FFE6E6;
+            color: #FF99AA;
+        }
+
+        .sidebar-item i {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .logout {
+            margin-top: auto;
+        }
+
+        /* Header Styles */
+        .header {
+            background: #BE9CC1;
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        .user-profile img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            flex-grow: 1;
+        }
+
+        /* Reservation Section Styles */
+        .reservation-section {
+            background: rgba(190, 156, 193, 0.2);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px;
+            position: relative;
+        }
+
+        .add-reservation-btn {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background: rgba(190, 156, 193, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Reservation Table Styles */
+        .reservation-table {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .reservation-table th {
+            text-align: left;
+            padding: 15px;
+            color: #666;
+            font-weight: normal;
+        }
+
+        .reservation-table td {
+            padding: 15px;
+            color: #444;
+        }
+
+        /* Time Dropdown Styles */
+        .time-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .time-dropdown-content {
+            position: absolute;
+            background: white;
+            min-width: 120px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            z-index: 1000;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .time-option {
+            padding: 10px 20px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .time-option:hover {
+            background: #FFE6E6;
+            color: #FF99AA;
+        }
+
+        .done-btn {
+            background: rgba(190, 156, 193, 0.8);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .chevron-down {
+            margin-left: 5px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-item add-button">
+                <i class="fas fa-plus"></i>
+            </div>
+            <div class="sidebar-item active">
+                <i class="fas fa-calendar-check"></i>
+                <span>Reservation</span>
+            </div>
+            <div class="sidebar-item">
+                <i class="fas fa-clock"></i>
+                <span>Availability</span>
+            </div>
+            <div class="sidebar-item logout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div class="nav-links">
+                    <a href="#">Home</a>
+                    <a href="#">Reservation Data</a>
+                </div>
+                <div class= "logo">
+                    <img src ="Journey 1.png" alt="Logo Website">
+                <div class="user-profile">
+                    <img src="/api/placeholder/30/30" alt="Admin Profile">
+                    <span>Admin</span>
+                </div>
+            </div>
+
+            <!-- Reservation Section -->
+            <div class="reservation-section">
+                <h2>Daftar Reservasi</h2>
+                <button class="add-reservation-btn">
+                    <i class="fas fa-plus"></i>
+                    Tambah Reservasi
+                </button>
+
+                <table class="reservation-table">
+                    <thead>
+                        <tr>
+                            <th>Reservation ID</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Room</th>
+                            <th>Payment</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>RNEYJINOV241</td>
+                            <td>01/11/2024</td>
+                            <td>
+                                <div class="time-dropdown">
+                                    Time <i class="fas fa-chevron-down chevron-down"></i>
+                                    <div class="time-dropdown-content">
+                                        <div class="time-option">11:00</div>
+                                        <div class="time-option">12:00</div>
+                                        <div class="time-option">13:00</div>
+                                        <div class="time-option">14:00</div>
+                                        <div class="time-option">15:00</div>
+                                        <div class="time-option">16:00</div>
+                                        <div class="time-option">17:00</div>
+                                        <div class="time-option">18:00</div>
+                                        <div class="time-option">19:00</div>
+                                        <div class="time-option">20:00</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Regular Room</td>
+                            <td>-</td>
+                            <td><button class="done-btn">Done</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
